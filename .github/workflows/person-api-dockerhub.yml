@@ -35,8 +35,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
-          file: ./modules/person/Dockerfile
+          context: ./modules/person/
+          file: ./Dockerfile
           platforms: linux/amd64
           push: true
           tags: ar251/udaconnect:person.api.v1
