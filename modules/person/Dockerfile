@@ -6,7 +6,7 @@ WORKDIR .
 
 #COPY ./modules/person/requirements requirements.txt
 COPY . .
-
+RUN ls
 RUN pip install -r requirements.txt
 
 EXPOSE 5000
