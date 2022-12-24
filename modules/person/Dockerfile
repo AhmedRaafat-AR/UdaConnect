@@ -6,6 +6,8 @@ COPY . /person-api
 
 WORKDIR /person-api
 
+RUN pwd; ls;
+
 RUN pip install -r requirements.txt
 
 EXPOSE 5000
