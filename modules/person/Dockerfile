@@ -2,11 +2,10 @@ FROM python:3.7-alpine
 
 RUN apk add --no-cache gcc musl-dev linux-headers geos libc-dev postgresql-dev
 
-COPY . /person-api
+WORKDIR .
 
-WORKDIR /person-api
-
-RUN pwd; ls;
+#COPY ./modules/person/requirements requirements.txt
+COPY . .
 
 RUN pip install -r requirements.txt
 
