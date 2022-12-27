@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./modules/location_api
-          file: ./modules/location/Dockerfile
+          file: ./modules/location_api/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ar251/udaconnect:location.api.v1
