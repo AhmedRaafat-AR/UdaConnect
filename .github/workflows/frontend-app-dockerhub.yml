@@ -3,7 +3,7 @@ name: Udaconnect Frontend APP - Package with Docker
 on:
   push:
     branches: [ "master" ]
-    #paths: ['modules/frontend/**']
+    paths: ['modules/frontend/**']
 
 jobs:
 
