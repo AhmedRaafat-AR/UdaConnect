@@ -35,7 +35,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./modules/location
+          context: ./modules/location_api
           file: ./modules/location/Dockerfile
           platforms: linux/amd64
           push: true
