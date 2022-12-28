@@ -3,7 +3,7 @@ name: Udaconnect Connection API - Package with Docker
 on:
   push:
     branches: [ "master" ]
-    #paths: ['modules/connection/**']
+    paths: ['modules/connection/**']
 
 jobs:
 
