@@ -81,7 +81,11 @@ Afterwards, you can test that `kubectl` works by running a command like `kubectl
 3. `kubectl apply -f deployment/postgres.yaml` - Set up a Postgres database running PostGIS
 4. `kubectl apply -f deployment/udaconnect-api.yaml` - Set up the service and deployment for the API
 5. `kubectl apply -f deployment/udaconnect-app.yaml` - Set up the service and deployment for the web app
-6. `sh scripts/run_db_command.sh <POD_NAME>` - Seed your database against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`)
+6. `kubectl apply -f deployment/udaconnect-location-api.yaml` - Set up the service and deployment for the location api
+7. `kubectl apply -f deployment/kafka-deployment.yaml` - Set up the service and deployment for kafka
+8. `kubectl apply -f deployment/kafka-configmap.yaml` - Set up environment variables for the location producer
+9. `sh scripts/run_db_command.sh <POD_NAME>` - Seed your database against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`)
+10. `sh scripts/create_kafka_topic <POD_NAME>` - create topic against the `kafka` pod. (`kubectl get pods` will give you the `POD_NAME`)
 
 Manually applying each of the individual `yaml` files is cumbersome but going through each step provides some context on the content of the starter project. In practice, we would have reduced the number of steps by running the command against a directory to apply of the contents: `kubectl apply -f deployment/`.
 
@@ -89,7 +93,7 @@ Note: The first time you run this project, you will need to seed the database wi
 
 ### Verifying it Works
 Once the project is up and running, you should be able to see 3 deployments and 3 services in Kubernetes:
-`kubectl get pods` and `kubectl get services` - should both return `udaconnect-app`, `udaconnect-api`, and `postgres`
+`kubectl get pods` and `kubectl get services` - should both return `udaconnect-app`, `udaconnect-api`, `udaconnect-location-api`, `kafka-deployment`, `zookeeper-deployment` and `postgres`
 
 
 These pages should also load on your web browser:
