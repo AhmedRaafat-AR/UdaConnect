@@ -1,9 +1,9 @@
-name: Udaconnect API - Package with Docker
+name: Udaconnect Connection API - Package with Docker
 
 on:
   push:
     branches: [ "master" ]
-    paths: ['modules/api/**']
+    #paths: ['modules/connection/**']
 
 jobs:
 
@@ -35,8 +35,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./modules/api
-          file: ./modules/api/Dockerfile
+          context: ./modules/connection
+          file: ./modules/connection/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ar251/udaconnect:api.v1
+          tags: ar251/udaconnect:connection.api.v1

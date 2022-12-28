@@ -9,7 +9,7 @@ from geoalchemy2.functions import ST_AsText, ST_Point
 from sqlalchemy.sql import text
 
 logging.basicConfig(level=logging.WARNING)
-logger = logging.getLogger("udaconnect-api")
+logger = logging.getLogger("connection-api")
 
 
 class ConnectionService:
@@ -114,9 +114,4 @@ class LocationService:
 class PersonService:
     @staticmethod
     def retrieve_all() -> List[Person]:
-        
-        persons = requests.get(PERSON_SERVICE_ENDPOINT + "api/persons")
-        persons = persons.json()
-        for each in persons:
-
         return db.session.query(Person).all()
