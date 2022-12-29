@@ -11,10 +11,11 @@ print("Sending sample payload...")
 # local
 #channel = grpc.insecure_channel("localhost:5005")
 
-# nodeport
-channel = grpc.insecure_channel("localhost:30003")
+# nodeport - local
+#channel = grpc.insecure_channel("localhost:30003")
 
-
+# inside cluster
+channel = grpc.insecure_channel("location-api:5005")
 
 stub = location_pb2_grpc.locationServiceStub(channel)
 
