@@ -1,8 +1,17 @@
-grpc documentation of location producer, open modules/location/writer.py to know how to make a sample request.
+open modules/location/
 
-writer.py will send request to grpc server then pass the data to location producer.
+to make a sample request
 
-structured data 
+1- run 'sh script/create_kafka_topic.sh' to create kafka topic
+
+2- run 'sh script/consumer.sh' that will make a request to kafka and write the location data to msg file and 'cat msg'.
+
+2- run 'sh script/req_grpc.sh' that will make a request to grpcserver and pass the location data to kafka producer.
+
+4- kafka producer will make a request to kafka server with 'locations' topic to add message.
+
+
+-Portobuf location message structured data 
 
 message LocationMessage {
   int32 userId = 1;
