@@ -7,7 +7,7 @@ import json
 #kafka_topic = "locations"
 
 # configmap
-kafka_server = os.environ["Kafka_API"]
+kafka_server = os.environ["KAFKA_API"]
 kafka_topic = os.environ["KAFKA_TOPIC"]
 
 consumer = KafkaConsumer(kafka_topic, bootstrap_servers=kafka_server)
