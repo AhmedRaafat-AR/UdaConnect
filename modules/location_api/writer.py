@@ -8,14 +8,7 @@ Sample implementation of a writer that can be used to write messages to gRPC.
 
 print("Sending sample payload...")
 
-# local
-#channel = grpc.insecure_channel("localhost:5005")
-
-# nodeport - local
-#channel = grpc.insecure_channel("localhost:30003")
-
-# inside cluster
-channel = grpc.insecure_channel("location-api:5005")
+channel = grpc.insecure_channel("localhost:5005")
 
 stub = location_pb2_grpc.locationServiceStub(channel)
 
