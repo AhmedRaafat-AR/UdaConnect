@@ -7,10 +7,10 @@ import json
 #kafka_topic = "locations"
 
 # configmap
-# kafka_server = os.environ["KAFKA_API"]
-# kafka_topic = os.environ["KAFKA_TOPIC"]
+kafka_server = os.environ["KAFKA_API"]
+kafka_topic = os.environ["KAFKA_TOPIC"]
 
-consumer = KafkaConsumer("locations", bootstrap_servers="localhost:9092")
+consumer = KafkaConsumer(kafka_topic, bootstrap_servers=kafka_server)
 
 msg = open(r"msg", "w")
 
