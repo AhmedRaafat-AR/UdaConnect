@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   labels:
     service: location-api
-  name: location-api
+  name: location-api-deployment
 spec:
   replicas: 1
   selector:
