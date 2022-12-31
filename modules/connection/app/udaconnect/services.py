@@ -1,7 +1,6 @@
 import logging
 import requests
 
-from
 from datetime import datetime, timedelta
 from typing import Dict, List
 
