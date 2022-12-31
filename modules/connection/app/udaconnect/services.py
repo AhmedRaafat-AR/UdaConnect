@@ -32,7 +32,6 @@ class ConnectionService:
         # Cache all users in memory for quick lookup
         person_map: Dict[str, Person] = {person.id: person for person in PersonService.retrieve_all()}
         
-        print(person_map)
         # Prepare arguments for queries
         data = []
         for location in locations:
@@ -87,9 +86,9 @@ class PersonService:
     def retrieve_all() -> List[Person]:
         persons = requests.get("http://person-svc-api:5000/api/persons")
         persons = persons.json()
-        result: list = []
+        result: list[Person] = []
         
         for p in persons:
-            result.append(p)
+            result.append(Person(p))
         
         return result 
