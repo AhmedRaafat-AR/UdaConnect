@@ -86,9 +86,9 @@ class PersonService:
     def retrieve_all() -> List[Person]:
         persons = requests.get("http://person-svc-api:5000/api/persons")
         persons = persons.json()
-        result: list[Person] = []
+        result: list = []
         
         for p in persons:
-            result.append(Person(p))
+            result.append(p)
         
         return result 
