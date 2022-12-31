@@ -83,12 +83,15 @@ class ConnectionService:
 
 class PersonService:
     @staticmethod
+    def retrieve(person_id: int) -> Person:
+        p = requests.get(
+            f"http://person-svc-api:5000/api/persons/{person_id}").json()
+        person = Person(p)
+        return person
+
+    @staticmethod
     def retrieve_all() -> List[Person]:
-        persons = requests.get("http://person-svc-api:5000/api/persons")
-        persons = persons.json()
-        result: list = []
-        
-        for p in persons:
-            result.append(p)
-        
-        return result
+        persons = requests.get("http://person-svc-api:5000/api/persons").json()
+        person_list = [Person(p) for p in persons]
+
+        return person_list
