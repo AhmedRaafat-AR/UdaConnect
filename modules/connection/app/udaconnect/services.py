@@ -91,4 +91,4 @@ class PersonService:
         for p in persons:
             result.append(p)
         
-        return result 
+        return result

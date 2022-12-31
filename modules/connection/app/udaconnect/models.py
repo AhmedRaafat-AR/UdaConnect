@@ -13,6 +13,11 @@ from sqlalchemy.ext.hybrid import hybrid_property
 
 
 class Person(db.Model):
+    
+    def __init__(self, my_dict):
+        for key in my_dict:
+            setattr(self, key, my_dict[key])
+
     __tablename__ = "person"
 
     id = Column(Integer, primary_key=True)
