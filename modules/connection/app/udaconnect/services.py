@@ -1,4 +1,6 @@
 import logging
+import requests
+import os
 from datetime import datetime, timedelta
 from typing import Dict, List
 
@@ -82,4 +84,7 @@ class ConnectionService:
 class PersonService:
     @staticmethod
     def retrieve_all() -> List[Person]:
-        return db.session.query(Person).all()
+        persons = requests.get("http://person-api:5000/api/persons")
+        persons = persons.json()
+        p_list = [Person(p)for p in persons]
+        return p_list
