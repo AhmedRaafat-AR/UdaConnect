@@ -1,6 +1,7 @@
 import logging
 import requests
-import os
+
+from
 from datetime import datetime, timedelta
 from typing import Dict, List
 
@@ -31,7 +32,8 @@ class ConnectionService:
 
         # Cache all users in memory for quick lookup
         person_map: Dict[str, Person] = {person.id: person for person in PersonService.retrieve_all()}
-
+        
+        print(person_map)
         # Prepare arguments for queries
         data = []
         for location in locations:
@@ -84,7 +86,7 @@ class ConnectionService:
 class PersonService:
     @staticmethod
     def retrieve_all() -> List[Person]:
-        persons = requests.get("person-api:5000/api/persons")
+        persons = requests.get("person-api:5000/api/persons").headers()
         persons = persons.json()
         p_list = [Person(p)for p in persons]
         return p_list
