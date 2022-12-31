@@ -14,7 +14,7 @@ def create_app(env=None):
     app.config.from_object(config_by_name[env or "test"])
     api = Api(app, title="Connection API", version="0.1.0")
 
-    CORS(app, origins='*')  # Set CORS for development
+    CORS(app, resources={r'/api/*': {'origins' 'http://localhost:30000'}})  # Set CORS for development
 
     register_routes(api, app)
     db.init_app(app)
