@@ -1,7 +1,7 @@
 import os
 import json 
 from kafka import KafkaConsumer
-import modules.location_api.consumer_to_db as to_db
+import consumer_to_db as to_db
 
 
 # nodport local
