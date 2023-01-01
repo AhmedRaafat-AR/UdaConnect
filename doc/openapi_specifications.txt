@@ -1,0 +1,6 @@
+These pages should also load on your web browser:
+* `http://localhost:30020/` - Person OpenAPI Documentation
+* `http://localhost:30020/api/persons` - Person Base path for API
+* `http://localhost:30021/` - Connection OpenAPI Documentation
+* `http://localhost:30021/api/persons/${personId}/connection?start_date=2020-01-01&end_date=2020-12-30&distance=5` - Connection Base path for API
+* `http://localhost:30023/` - Frontend ReactJS Application

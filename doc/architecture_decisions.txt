@@ -1,2 +1,7 @@
-Frontend talk to Person and Connection microservice using a RESTFul API responsible with users information and connection data.
-Location api refactor into grpc pass user location data to kafka produces microservice and kafka cluster receives this location data which will be consumed by location consumer microservice, and this data will be stored in postgres database.
+-Frontend talk to Person and Connection microservice, using a RESTFul API responsible with users information and connection data.
+-Person api use person service to get person by id and all persons in database
+-Connection api talk use connection service to request daat from location database and person api service
+-Location api refactor into grpc because grpc uses the Protobuf (protocol buffers) messaging format, 
+which is a highly packed, highly efficient messaging format for serializing structured,
+in location modules writer.py send req to location server to pass user location data to kafka produces microservice,
+and kafka cluster receives this location data which will be consumed by location consumer microservice, and this data will be stored in postgres database.
