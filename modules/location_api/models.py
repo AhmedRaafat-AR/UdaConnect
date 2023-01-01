@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime
 
-from db_location import db  # noqa
+from db_engine import db_engine  # noqa
 from geoalchemy2 import Geometry
 from geoalchemy2.shape import to_shape
 from shapely.geometry.point import Point
@@ -12,7 +12,7 @@ from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.ext.hybrid import hybrid_property
 
 
-class Person(db.Model):
+class Person(db_engine.db.Model):
     __tablename__ = "person"
 
     id = Column(Integer, primary_key=True)
@@ -21,7 +21,7 @@ class Person(db.Model):
     company_name = Column(String, nullable=False)
 
 
-class Location(db.Model):
+class Location(db_engine.db.Model):
     __tablename__ = "location"
 
     id = Column(BigInteger, primary_key=True)
