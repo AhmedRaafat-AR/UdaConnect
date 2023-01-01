@@ -19,7 +19,7 @@ msg = open(r"msg", "w")
 def Read(consumer):
     for location in consumer:
         loc = json.loads(location.value.decode('utf-8'))
-        to_db.consumer_to_db(loc)
+        to_db.create(loc)
         print(loc)
         return msg.write(f"{loc}")
 
