@@ -15,7 +15,7 @@ spec:
         service: consumer
     spec:
       containers:
-      - image: ar251/udaconnect:location.api.v1
+      - image: ar251/udaconnect:consumer.v1
         name: consumer-container
         imagePullPolicy: Always
         env:
