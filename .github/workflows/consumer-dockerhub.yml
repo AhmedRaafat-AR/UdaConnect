@@ -3,7 +3,7 @@ name: Udaconnect Consumer - Package with Docker
 on:
   push:
     branches: [ "master" ]
-    #paths: ['modules/consumer/**']
+    paths: ['modules/consumer/**']
 
 jobs:
 
@@ -35,7 +35,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./consumer/person
+          context: ./modules/consumer
           file: ./modules/consumer/Dockerfile
           platforms: linux/amd64
           push: true
