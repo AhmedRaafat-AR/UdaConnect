@@ -1,0 +1,79 @@
+openapi: 3.0.3
+info:
+  title: Udaconnect
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: localhost
+  - url: http://localhost
+paths:
+  /api/persons:
+    get:
+      tags:
+        - Persons
+      summary: persons
+      description: persons
+      operationId: persons
+      requestBody:
+        content:
+          text/plain:
+            example: ''
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Persons
+      summary: persons
+      description: persons
+      operationId: persons1
+      requestBody:
+        content:
+          text/plain:
+            example: ''
+      responses:
+        '200':
+          description: ''
+  /api/persons/6:
+    get:
+      tags:
+        - Persons
+      summary: personId
+      description: personId
+      operationId: personid
+      responses:
+        '200':
+          description: ''
+  /api/persons/6/connection:
+    get:
+      tags:
+        - Connections
+      summary: connections
+      description: connections
+      operationId: connections
+      parameters:
+        - name: start_date
+          in: query
+          schema:
+            type: string
+            example: '2020-01-01'
+        - name: end_date
+          in: query
+          schema:
+            type: string
+            example: '2020-12-30'
+        - name: distance
+          in: query
+          schema:
+            type: string
+            example: '5'
+      requestBody:
+        content:
+          text/plain:
+            example: ''
+      responses:
+        '200':
+          description: ''
+tags:
+  - name: Persons
+  - name: Connections
